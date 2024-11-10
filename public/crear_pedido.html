@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear o Editar Pedido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="pedidoForm">
+        <h1 id="titulo">Crear Nuevo Pedido</h1>
+    <form id="pedidoForm">
+        <label for="idcliente">Cliente:</label>
+        <select id="idcliente" name="idcliente" required>
+            <!-- Opciones de clientes se llenarán con JavaScript -->
+        </select>
+        
+        <label for="fechaPedido">Fecha del Pedido:</label>
+        <input type="date" id="fechaPedido" name="fechaPedido" required>
+        
+        <label for="nroComprobante">Número de Comprobante:</label>
+        <input type="number" id="nroComprobante" name="nroComprobante" required>
+        
+        <label for="formaPago">Forma de Pago:</label>
+        <input type="text" id="formaPago" name="formaPago" required>
+        
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="observaciones"></textarea>
+        
+        <h2>Productos</h2>
+        <div id="productosContainer">
+            <div class="producto">
+                <label for="producto1">Producto:</label>
+                <select class="productoSelect" name="producto[]" required>
+                    <!-- Opciones de productos se llenarán con JavaScript -->
+                </select>
+                <label for="cantidad1">Cantidad:</label>
+                <input type="number" class="cantidad" name="cantidad[]" required min="1">
+                <button type="button" class="eliminarProducto">Eliminar</button>
+            </div>
+        </div>
+        <button type="button" id="agregarProducto">Agregar Producto</button>
+        
+        <button type="submit">Guardar Pedido</button>
+    </form>
+    
+    <div id="productosContainer">
+        <!-- Productos se agregarán aquí -->
+    </div>
+    
+    <div id="mensaje" style="display:none;"></div>
+    
+
+    <!-- El mismo código HTML para el formulario -->
+    <script src="../crear_pedido.js"></script>
+</body>
+</html>
